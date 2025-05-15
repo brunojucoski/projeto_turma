@@ -1,0 +1,7 @@
+{
+  "name": "projeto_turma",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,30 @@
+<ion-card> 
+  <ion-card-header>
+    <ion-card-title> Cadastro de Aluno </ion-card-title>
+  </ion-card-header>
+
+
+<ion-card-content>  
+  <ion-input 
+  label="Nome"
+  labelPlacement="floating"
+  fill="outline"
+  [(ngModel)]="nome"
+  type="string"
+  />
+
+
+
+  <ion-button
+  expand="block"
+  fill="outline"
+  color="tertiary"
+  class="ion-margin-top"
+  (click)="salvarBotao()">
+  Cadastrar
+  </ion-button>
+
+</ion-card-content>
+
+
+</ion-card>

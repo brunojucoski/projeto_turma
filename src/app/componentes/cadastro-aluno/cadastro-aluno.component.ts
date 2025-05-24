@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output , inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonCard, IonCardContent, IonCardHeader, IonInput,IonButton , IonCardTitle } from '@ionic/angular/standalone';
+import { AlunoService } from 'src/app/services/aluno.service';
 
 
 
@@ -15,12 +16,14 @@ export class CadastroAlunoComponent  implements OnInit {
 
   public nome: string ='';
 
+  public service = inject(AlunoService);
+
 
   @Input() turma! : string; 
 
 
   @Output() cadastrar
-  = new EventEmitter<string>();
+  = new EventEmitter<void>();
 
 
 
@@ -28,8 +31,15 @@ export class CadastroAlunoComponent  implements OnInit {
 
   ngOnInit() {}
 
-  public salvarBotao() {
-    this.cadastrar.emit(this.nome + ' - ' +this.turma);
+  public async salvarBotao() {
+    const aluno = {
+      turma: this.turma ,
+      nome: this.nome }
+
+  await this.service.create(aluno);
+  this.nome = ''
+
+    this.cadastrar.emit();
   }
 
 }

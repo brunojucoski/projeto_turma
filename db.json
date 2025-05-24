@@ -1,0 +1,32 @@
+{
+  "professores": [
+    {
+      "id": "1a24",
+      "nome": "Jaspion",
+      "email": "Jaspion Da Silva Junior ",
+      "matricula": "151654",
+      "telefone": "489951954984"
+    },
+    {
+      "id": "53f1",
+      "nome": "Fabricio",
+      "email": "FABRICIOOO",
+      "matricula": "46546",
+      "telefone": "48495195195195"
+    },
+    {
+      "id": "0ec5",
+      "nome": "adsfsdfafdaf",
+      "email": "asdfdsfsdf",
+      "matricula": "asdfasdf",
+      "telefone": "asdfsdaf"
+    },
+    {
+      "id": "4163",
+      "nome": "sdafasdfasdf",
+      "email": "asdfasdf",
+      "matricula": "asdfasdf",
+      "telefone": "asdfadsf"
+    }
+  ]
+}

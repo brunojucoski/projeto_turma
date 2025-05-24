@@ -1,0 +1,78 @@
+
+<ion-card> 
+  <ion-card-header>    
+    <ion-card-title> 
+      Cadastro de Professor
+    </ion-card-title>
+  </ion-card-header>
+  
+  
+  <ion-card-content> 
+
+    <ion-input 
+  label="Nome"
+  labelPlacement="floating"
+  fill="outline"
+  [(ngModel)]="professor.nome"
+  type="string"
+  />
+
+  <ion-input 
+  label="Matricula"
+  labelPlacement="floating"
+  fill="outline"
+  [(ngModel)]="professor.matricula"
+  type="string"
+  />
+
+  <ion-input 
+  label="Telefone"
+  labelPlacement="floating"
+  fill="outline"
+  [(ngModel)]="professor.telefone"
+  type="string"
+  />
+
+  <ion-input 
+  label="Nome"
+  labelPlacement="floating"
+  fill="outline"
+  [(ngModel)]="professor.email"
+  type="string"
+  />
+
+  <ion-button
+  expand="block"
+  fill="outline"
+  color="tertiary"
+  class="ion-margin-top"
+  (click)="save(professor)">
+  Salvar
+  </ion-button>
+
+
+  </ion-card-content>
+
+</ion-card>
+
+<ion-list>  
+@for(professor of professores$ | async; track professor.id) {
+ 
+  
+  <ion-item>
+    <ion-text> {{professor.nome}}  </ion-text>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="editar(professor)" color="secondary">Editar</ion-button>
+        <ion-button (click)="excluir(professor)" color="danger"> Excluir</ion-button>
+      </ion-buttons>
+  </ion-item>
+}
+</ion-list>
+<hr> 
+<a> ------------------------------------------------------------------------------------------ </a>
+
+
+@for(professor of professores; track professor.id) {
+  <p> {{professor.nome}} </p>
+}

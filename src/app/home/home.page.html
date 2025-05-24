@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="tertiary">
     <ion-title>
-      Cadastro de turma
+      Turmas
     </ion-title>
     
     
@@ -13,25 +13,36 @@
     aria-label="Dark toggle" color="dark"
     [enableOnOffLabels]="true"
     > Dark Mode </ion-toggle>
-
-   
   </ion-toolbar>
-
-
 </ion-header>
-
-
-
 
 <ion-content >   
 
+<app-cadastro-aluno [turma]="turma" (cadastrar)="carregarAlunos()"> </app-cadastro-aluno>
+
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Alunos</ion-label>
+  </ion-list-header>
+
+  @for(aluno of alunos; track aluno) {
+
+
+  <ion-item>
+    <ion-label>{{aluno.nome}} </ion-label>
+    <ion-buttons slot="end">        
+      <ion-button> Editar </ion-button>
+    
+      <ion-button (click)="excluir(aluno)"> Excluir </ion-button>
+    </ion-buttons>
+  </ion-item>
+}
+</ion-list>
 
 
 
-
-<app-cadastro-aluno [turma]="turma" (cadastrar)="quandoCadastrar($event)"> </app-cadastro-aluno>
-
-
+<app-professor> </app-professor>
 
 
 

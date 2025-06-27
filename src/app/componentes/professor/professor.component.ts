@@ -23,7 +23,7 @@ export class ProfessorComponent  implements OnInit {
     email: '',
     matricula: '',
     telefone: ''
-  }
+  } 
 
 
   public professores$! : Observable<Professor[]>
@@ -34,8 +34,7 @@ export class ProfessorComponent  implements OnInit {
 
   ngOnInit() {
     this.findAll();
-    this.findAllComSubscribe();
-    
+
   }
 
   public findAll() {
@@ -99,6 +98,7 @@ export class ProfessorComponent  implements OnInit {
       
     })
 
+    //confirm.dialog
 
   }
     public excluir(professor: Professor) {

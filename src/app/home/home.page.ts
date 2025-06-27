@@ -30,7 +30,7 @@ export class HomePage implements OnInit{
 
   public alunos: Aluno[] = []; 
 
-
+  
 
   constructor() {}
 

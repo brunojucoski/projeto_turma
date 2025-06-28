@@ -1,4 +1,29 @@
 
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Professores
+    </ion-title>
+    <ion-buttons>
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    
+    <ion-toggle class="dark-mode" 
+    justify="end"
+    [checked]="modoNoturno"
+    (ionChange)="toggleModoNoturno($event)"
+    labelPlacement="stacked"
+    aria-label="Dark toggle" color="dark"
+    [enableOnOffLabels]="true"
+    > Dark Mode </ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >   
+
+
+
 <ion-card> 
   <ion-card-header>    
     <ion-card-title> 
@@ -70,9 +95,58 @@
 }
 </ion-list>
 <hr> 
-<a> ------------------------------------------------------------------------------------------ </a>
+<a> --------------------------------------------------------------------------------------- </a>
 
 
 @for(professor of professores; track professor.id) {
   <p> {{professor.nome}} </p>
 }
+
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      Professor 1 
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <h1> Fabricio the BEST TEACHER
+    </h1>
+    <ion-button
+    expand="block"
+    fill="outline"
+    color="tertiary"
+    class="ion-margin-top" id="open-modal" > Ver </ion-button>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement" >  
+  <ng-template> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-title> FABRISS </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="modal.dismiss()">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+     
+      <p> MUITO OSBRIGUEIDO POR TUDOW VIU É NOIS MEU QRIDO, QUANDO QUISER FAZER UMAS TATTOO CHAMA EU .</p>
+
+      <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ionic_Logo.svg/1280px-Ionic_Logo.svg.png" 
+      style="width: 100%; max-width: 300px; border-radius: 12px; display: block; margin: auto; padding: 10px " 
+    />
+    </ion-content>
+</ng-template>
+</ion-modal>
+
+
+
+
+
+
+
+</ion-content>

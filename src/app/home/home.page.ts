@@ -6,6 +6,7 @@ import { CadastroAlunoComponent } from "../componentes/cadastro-aluno/cadastro-a
 import { Preferences } from '@capacitor/preferences';
 import { Aluno, AlunoService } from 'src/app/services/aluno.service';
 import { ProfessorComponent } from "../componentes/professor/professor.component";
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,9 +15,8 @@ import { ProfessorComponent } from "../componentes/professor/professor.component
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, FormsModule, CadastroAlunoComponent, IonToggle, IonList, IonListHeader, IonLabel, IonButtons, IonItem, IonButton, ProfessorComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, FormsModule, CadastroAlunoComponent, IonToggle, IonList, IonListHeader, IonLabel, IonButtons, IonItem, IonButton, ProfessorComponent , RouterModule],
 })
-
 
 
 export class HomePage implements OnInit{
